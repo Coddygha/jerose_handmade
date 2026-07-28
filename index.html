@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Premium Handmade Products - High Quality, Affordable, Customizable">
+  <title>JeroseHandCraft | Handmade Products</title>
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts: Poppins & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+  
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">JeroseHandCraft</div>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#categories" class="nav-link">Categories</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    
+    <div class="nav-icons">
+      <i class="fas fa-search" id="searchToggle" title="Search"></i>
+      <div style="position: relative; display: inline-block;">
+        <i class="fas fa-shopping-cart" id="cartIcon" title="Cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+      <i class="fas fa-moon" id="themeToggle" title="Dark/Light Mode"></i>
+      <i class="fas fa-bars mobile-menu-btn" id="mobileMenuBtn" title="Menu"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Premium Handmade Products</h1>
+      <p class="sub">High Quality • Affordable • Customizable</p>
+      <div class="btn-group">
+        <button class="btn btn-primary ripple" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-store"></i> Shop Now
+        </button>
+        <button class="btn btn-outline ripple" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <i class="fas fa-envelope"></i> Contact Us
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2 class="section-title">Our Products</h2>
+    
+    <!-- Search and Filter Bar -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+      <select id="categoryFilter" class="filter-select">
+        <option value="all">All Categories</option>
+        <option value="flower Bouquet">Flower Bouquets</option>
+        <option value="gifts">Gifts</option>
+        <option value="accessories">Accessories</option>
+        <option value="customized">Customized</option>
+        <option value="souvenirs">Souvenirs</option>
+      </select>
+      <select id="priceFilter" class="filter-select">
+        <option value="default">Sort by Price</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select>
+    </div>
+    
+    <!-- Product Grid -->
+    <div class="product-grid" id="productContainer">
+      <!-- Products will be rendered dynamically by JavaScript -->
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories">
+    <h2 class="section-title">Categories</h2>
+    <div class="categories-grid" id="categoryCards">
+      <!-- Categories will be rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews">
+    <h2 class="section-title">Customer Reviews</h2>
+    <div class="reviews-container" id="reviewContainer">
+      <!-- Reviews will be rendered dynamically -->
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <div class="about-card glass">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Mission</h3>
+        <p>To bring joy through artistry and craftsmanship, making premium handmade products accessible to everyone.</p>
+      </div>
+      <div class="about-card glass">
+        <i class="fas fa-eye"></i>
+        <h3>Our Vision</h3>
+        <p>Building a sustainable community of artisans and crafters, preserving traditional handmade techniques.</p>
+      </div>
+      <div class="about-card glass">
+        <i class="fas fa-heart"></i>
+        <h3>Why Choose Us</h3>
+        <p>Every product is crafted with love, attention to detail, and premium materials. Quality guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-content">
+      <div class="contact-info glass">
+        <p><i class="fab fa-facebook-messenger"></i> <strong>Messenger:</strong> Jerose Merida Empuerto</p>
+        <p><i class="fab fa-facebook"></i> <strong>Facebook:</strong> Jerose Merida Empuerto</p>
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> jeroseempuerto@gmail.com</p>
+        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +63 9559067041</p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Colorado Digos City</p>
+      </div>
+      
+       <div class="map-placeholder glass" style="padding: 0; overflow: hidden;">
+      <iframe 
+        src="https://www.google.com/maps?q=6.759576,125.291096&z=16&output=embed" 
+        width="100%" 
+        height="350" 
+        style="border:0; border-radius: 15px;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p>&copy; 2025 ArtisanCraft. All rights reserved.</p>
+        <button id="backToTop" class="btn btn-primary">
+          <i class="fas fa-arrow-up"></i> Back to Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="overlay" id="overlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <i class="fas fa-times" id="closeCart"></i>
+    </div>
+    <div id="cartItems" class="cart-items">
+      <!-- Cart items rendered dynamically -->
+    </div>
+    <div class="cart-summary">
+      <p>Subtotal: ₱<span id="subtotal">0</span></p>
+      <p>Shipping Fee: ₱<span id="shippingFee">50</span></p>
+      <p class="total">Grand Total: ₱<span id="grandTotal">0</span></p>
+    </div>
+    <div class="cart-buttons">
+      <button class="btn btn-primary ripple" id="checkoutBtn">
+        <i class="fab fa-facebook-messenger"></i> Order via Messenger
+      </button>
+      <button class="btn btn-outline" id="clearCart">
+        <i class="fas fa-trash"></i> Clear Cart
+      </button>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="closeLightbox">&times;</span>
+    <button class="lightbox-prev" id="prevImage"><i class="fas fa-chevron-left"></i></button>
+    <img id="lightboxImg" src="" alt="Product Image">
+    <button class="lightbox-next" id="nextImage"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Added to cart!</span>
+  </div>
+
+  <!-- Floating Messenger Button -->
+  <a href="https://m.me/ArtisanCraftPH" target="_blank" class="floating-messenger" title="Chat with us">
+    <i class="fab fa-facebook-messenger"></i>
+  </a>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
