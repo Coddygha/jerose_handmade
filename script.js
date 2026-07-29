@@ -2,18 +2,18 @@
 // Product Data
 // ============================================
 const products = [
-  { id: 1, name: "Rose Bouquet", category: "flower Bouquet", price: 250, rating: 5, img: "images/1_bouquet.jpg", badge: "sale", stock: "In Stock" },
-  { id: 2, name: "Gift Box Set", category: "flower Bouquet", price: 200, rating: 4, img: "images/2_bouquet.jpg", badge: "new", stock: "In Stock" },
-  { id: 3, name: "Beaded Bracelet", category: "flower Bouquet", price: 250, rating: 5, img: "images/3_bouquet.jpg", badge: "", stock: "5 left" },
-  { id: 4, name: "Custom Mug", category: "flower Bouquet", price: 280, rating: 4, img: "images/4_bouquet.jpg", badge: "best", stock: "In Stock" },
-  { id: 5, name: "Keychain Souvenir", category: "flower Bouquet", price: 280, rating: 4, img: "images/5_bouquet.png", badge: "", stock: "In Stock" },
-  { id: 6, name: "Sunflower Wrap", category: "flower Bouquet", price: 150, rating: 5, img: "images/6_bouquet.png", badge: "sale", stock: "3 left" },
-  { id: 7, name: "Sunflower Wrap", category: "flower Bouquet", price: 150, rating: 5, img: "images/7_bouquet.png", badge: "sale", stock: "3 left" },
-  { id: 8, name: "Sunflower Wrap", category: "flower Bouquet", price: 600, rating: 5, img: "images/8_bouquet.png", badge: "sale", stock: "3 left" },
-  { id: 9, name: "Sunflower Wrap", category: "flower Bouquet", price: 280, rating: 5, img: "images/9_bouquet.png", badge: "sale", stock: "3 left" },
-  { id: 10, name: "Sunflower Wrap", category: "flower Bouquet", price: 150, rating: 5, img: "images/10_bouquet.png", badge: "sale", stock: "3 left" },
-  { id: 11, name: "Sunflower Wrap", category: "flower Bouquet", price: 85, rating: 5, img: "images/11_bouquet.png", badge: "sale", stock: "3 left" },
-  { id: 12, name: "Sunflower Wrap", category: "flower Bouquet", price: 85, rating: 5, img: "images/12_bouquet.png", badge: "sale", stock: "3 left" }
+  { id: 1, name: "🌼 Ivory Blossom Bouquet", category: "flower Bouquet", price: 250, rating: 5, img: "images/1_bouquet.jpg", badge: "sale", stock: "In Stock" },
+  { id: 2, name: "💙 Azure Serenity Bouquet", category: "flower Bouquet", price: 200, rating: 4, img: "images/2_bouquet.jpg", badge: "new", stock: "In Stock" },
+  { id: 3, name: "🤎 Mocha Elegance Bouquet", category: "flower Bouquet", price: 250, rating: 5, img: "images/3_bouquet.jpg", badge: "", stock: "5 left" },
+  { id: 4, name: "❤️ Crimson Bloom Bouquet", category: "flower Bouquet", price: 280, rating: 4, img: "images/4_bouquet.jpg", badge: "best", stock: "In Stock" },
+  { id: 5, name: "💜 Amethyst Bloom Bouquet", category: "flower Bouquet", price: 280, rating: 4, img: "images/5_bouquet.png", badge: "", stock: "In Stock" },
+  { id: 6, name: "🌺 Pink Blossom Delight Bouquet", category: "flower Bouquet", price: 150, rating: 5, img: "images/6_bouquet.png", badge: "sale", stock: "3 left" },
+  { id: 7, name: "🌷 Cherry Blossom Dream Bouquet", category: "flower Bouquet", price: 150, rating: 5, img: "images/7_bouquet.png", badge: "sale", stock: "3 left" },
+  { id: 8, name: "🌈 Spring Symphony Bouquet", category: "flower Bouquet", price: 600, rating: 5, img: "images/8_bouquet.png", badge: "sale", stock: "3 left" },
+  { id: 9, name: "🌷 Rosé Tulip Charm Bouquet", category: "flower Bouquet", price: 280, rating: 5, img: "images/9_bouquet.png", badge: "sale", stock: "3 left" },
+  { id: 10, name: "🌸 Blush Lily Bouquet", category: "flower Bouquet", price: 150, rating: 5, img: "images/10_bouquet.png", badge: "sale", stock: "3 left" },
+  { id: 11, name: "💜 Lavender Grace Bouquet", category: "flower Bouquet", price: 85, rating: 5, img: "images/11_bouquet.png", badge: "sale", stock: "3 left" },
+  { id: 12, name: "🌻 Golden Sunflower Bouquet", category: "flower Bouquet", price: 85, rating: 5, img: "images/12_bouquet.png", badge: "sale", stock: "3 left" }
 ];
 
 // ============================================
