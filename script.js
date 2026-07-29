@@ -199,28 +199,34 @@ function updateCart() {
 
 function renderCartItems() {
   if (cart.length === 0) {
-    cartItemsDiv.innerHTML = '<p style="text-align:center;padding:2rem;">Your cart is empty</p>';
+    cartItemsDiv.innerHTML = '<p style="text-align:center; padding:2rem; color:var(--text-light);">Your cart is empty 🛒</p>';
   } else {
     cartItemsDiv.innerHTML = cart.map(item => `
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid var(--glass-border);">
-        <div style="flex:1;">
+      <div class="cart-item">
+        <div class="cart-item-info">
           <strong>${item.name}</strong>
-          <p style="font-size:0.85rem;color:var(--text-light);">₱${item.price} x ${item.qty}</p>
+          <p>₱${item.price.toLocaleString()} x ${item.qty} = ₱${(item.price * item.qty).toLocaleString()}</p>
         </div>
-        <div style="display:flex;gap:0.5rem;align-items:center;">
-          <button class="btn" style="padding:0.3rem 0.6rem;" onclick="changeQuantity(${item.id}, -1)">-</button>
+        <div class="cart-item-controls">
+          <button onclick="changeQuantity(${item.id}, -1)" title="Decrease">−</button>
           <span>${item.qty}</span>
-          <button class="btn" style="padding:0.3rem 0.6rem;" onclick="changeQuantity(${item.id}, 1)">+</button>
-          <button class="btn" style="padding:0.3rem 0.6rem;color:red;" onclick="removeItem(${item.id})"><i class="fas fa-trash"></i></button>
+          <button onclick="changeQuantity(${item.id}, 1)" title="Increase">+</button>
+          <button onclick="removeItem(${item.id})" title="Remove" style="color:#EF4444; border-color:#FCA5A5;">
+            <i class="fas fa-trash"></i>
+          </button>
         </div>
       </div>
     `).join('');
   }
   
+  // Update totals
   const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-  const shipping = cart.length > 0 ? 20 : 0;
+  const deliveryOption = document.querySelector('input[name="delivery"]:checked');
+  const shipping = (deliveryOption && deliveryOption.value === 'delivery') ? 50 : 0;
+  
+  document.getElementById('shippingFee').textContent = shipping;
+  document.getElementById('grandTotal').textContent = (subtotal + shipping).toLocaleString();
   subtotalSpan.textContent = subtotal.toLocaleString();
-  grandTotalSpan.textContent = (subtotal + shipping).toLocaleString();
 }
 
 window.changeQuantity = changeQuantity;
@@ -393,8 +399,24 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 // Cart Drawer Toggle
 // ============================================
-function openCart() { cartDrawer.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-function closeCart() { cartDrawer.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+// ============================================
+// Cart Drawer Toggle (FIXED)
+// ============================================
+function openCart() {
+  cartDrawer.classList.add('open');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed'; // Prevent body scroll on mobile
+  document.body.style.width = '100%';
+}
+
+function closeCart() {
+  cartDrawer.classList.remove('open');
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.width = '';
+}
 
 document.getElementById('cartIcon').addEventListener('click', openCart);
 document.getElementById('closeCart').addEventListener('click', closeCart);
