@@ -237,28 +237,91 @@
     </div>
   </footer>
 
-  <!-- Cart Drawer -->
-  <div class="overlay" id="overlay"></div>
-  <div class="cart-drawer" id="cartDrawer">
-    <div class="cart-header">
-      <h3>Your Cart</h3>
-      <i class="fas fa-times" id="closeCart"></i>
+ <!-- Cart Drawer -->
+<div class="overlay" id="overlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <i class="fas fa-times" id="closeCart"></i>
+  </div>
+  <div id="cartItems" class="cart-items">
+    <!-- Cart items rendered dynamically -->
+  </div>
+  <div class="cart-summary">
+    <p>Subtotal: ₱<span id="subtotal">0</span></p>
+    <p>Shipping Fee: ₱<span id="shippingFee">0</span></p>
+    <p class="total">Grand Total: ₱<span id="grandTotal">0</span></p>
+  </div>
+  
+  <!-- Order Options -->
+  <div class="order-options">
+    <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem;">📦 Delivery Option:</h4>
+    <div class="option-group">
+      <label class="option-card" id="deliveryOption">
+        <input type="radio" name="delivery" value="delivery" checked>
+        <div class="option-content">
+          <i class="fas fa-truck"></i>
+          <div>
+            <strong>Delivery</strong>
+            <small>+₱50 Shipping Fee</small>
+          </div>
+        </div>
+      </label>
+      <label class="option-card" id="pickupOption">
+        <input type="radio" name="delivery" value="pickup">
+        <div class="option-content">
+          <i class="fas fa-store"></i>
+          <div>
+            <strong>Pick-up</strong>
+            <small>Colorado, Digos City</small>
+          </div>
+        </div>
+      </label>
     </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-summary">
-      <p>Subtotal: ₱<span id="subtotal">0</span></p>
-      <p>Shipping Fee: ₱<span id="shippingFee">50</span></p>
-      <p class="total">Grand Total: ₱<span id="grandTotal">0</span></p>
+    
+    <h4 style="margin-bottom: 0.5rem; margin-top: 1rem; font-size: 0.9rem;">💳 Payment Method:</h4>
+    <div class="option-group">
+      <label class="option-card" id="codOption">
+        <input type="radio" name="payment" value="cod" checked>
+        <div class="option-content">
+          <i class="fas fa-money-bill-wave"></i>
+          <div>
+            <strong>COD</strong>
+            <small>Pay when received</small>
+          </div>
+        </div>
+      </label>
+      <label class="option-card" id="gcashOption">
+        <input type="radio" name="payment" value="gcash">
+        <div class="option-content">
+          <i class="fas fa-mobile-alt"></i>
+          <div>
+            <strong>GCash</strong>
+            <small>0955-906-7041</small>
+          </div>
+        </div>
+      </label>
     </div>
-    <div class="cart-buttons">
-      <button class="btn btn-primary" id="checkoutBtn">
-        <i class="fab fa-facebook-messenger"></i> Order via Messenger
-      </button>
-      <button class="btn btn-outline" id="clearCart">
-        <i class="fas fa-trash"></i> Clear Cart
-      </button>
+    
+    <!-- Customer Details -->
+    <div class="customer-details">
+      <h4 style="margin-bottom: 0.5rem; margin-top: 1rem; font-size: 0.9rem;">👤 Your Details:</h4>
+      <input type="text" id="customerName" placeholder="Full Name *" class="detail-input" required>
+      <input type="text" id="customerAddress" placeholder="Complete Address (for delivery)" class="detail-input" id="addressField">
+      <input type="text" id="customerContact" placeholder="Contact Number *" class="detail-input" required>
+      <textarea id="customerNote" placeholder="Special instructions (optional)" class="detail-input" rows="2"></textarea>
     </div>
   </div>
+  
+  <div class="cart-buttons">
+    <button class="btn btn-primary" id="checkoutBtn">
+      <i class="fab fa-facebook-messenger"></i> Order via Messenger
+    </button>
+    <button class="btn btn-outline" id="clearCart">
+      <i class="fas fa-trash"></i> Clear Cart
+    </button>
+  </div>
+</div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
@@ -278,6 +341,43 @@
   <a href="https://m.me/jerose.empuerto" target="_blank" class="floating-messenger" title="Chat with us">
     <i class="fab fa-facebook-messenger"></i>
   </a>
+
+  <!-- AI Chatbot Widget -->
+<div class="chatbot-widget" id="chatbotWidget">
+  <button class="chatbot-toggle" id="chatbotToggle">
+    <i class="fas fa-robot"></i>
+    <span>Need help?</span>
+  </button>
+  
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar">🤖</div>
+      <div>
+        <h4>JeroseHandCraft Assistant</h4>
+        <p>Online | Auto-reply</p>
+      </div>
+      <button class="chatbot-close" id="chatbotClose">&times;</button>
+    </div>
+    
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="bot-message">
+        <p>Hi! 👋 Ako si <strong>Ai Jerose</strong>, ang AI assistant ng JeroseHandCraft. Paano kita matutulungan?</p>
+        <div class="quick-replies">
+          <button class="quick-reply" data-q="products">🛍️ Products</button>
+          <button class="quick-reply" data-q="price">💰 Pricing</button>
+          <button class="quick-reply" data-q="delivery">🚚 Delivery</button>
+          <button class="quick-reply" data-q="payment">💳 Payment</button>
+          <button class="quick-reply" data-q="order">📋 How to Order</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="chatbot-input">
+      <input type="text" id="chatbotInput" placeholder="Type your question...">
+      <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
 
   <!-- Custom JavaScript -->
   <script src="script.js"></script>
